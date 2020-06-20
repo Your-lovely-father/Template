@@ -21,23 +21,12 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        // target: 'http://192.168.1.119:8088/uajax',
-        target: 'http://49.233.174.102:8089/uajax',
+        target: process.env.VUE_APP_BASEURL,
         ws: true,
         secure:false,
         changOrigin: true,
         pathRewrite: {
           '^/api': ''
-        }
-      },
-      '/profile': {
-        // target: 'http://192.168.1.119:8088/uajax',
-        target: 'http://49.233.174.102:8089/profile',
-        ws: true,
-        secure:false,
-        changOrigin: true,
-        pathRewrite: {
-          '^/profile': ''
         }
       }
     }
